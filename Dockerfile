@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:14
 
 # Set the working directory in the container
 WORKDIR /user/Документы/mybrary
