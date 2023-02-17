@@ -1,7 +1,7 @@
 FROM node:12
 
 # Set the working directory in the container
-WORKDIR /user/Документы/new
+WORKDIR /user/Документы/mybrary
 
 # Copy the application files into the working directory
 COPY . .
