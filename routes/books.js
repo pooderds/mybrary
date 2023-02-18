@@ -9,8 +9,8 @@ const Author = require('../models/author')
 const imageMimeTypes = ['image/jpeg', 'image/png', 'image/gif']
 const upload = multer({
     dest: uploadPath,
-    fileFilter: (req, res, callbakc) => {
-        callback(naull, imageMimeTypes.includes(file.mimetype))
+    fileFilter: (req, file, callback) => {
+        callback(null, imageMimeTypes.includes(file.mimetype))
     }
 })
 
@@ -41,7 +41,7 @@ router.post('/', upload.single('cover'), async (req, res) => {
         //res.redirect(`books/${newBook.id}`)
         res.redirect(`books`)
     } catch {
-        renderNewPage(res, new Book())
+        renderNewPage(res, book, true)
 
     }
 })
